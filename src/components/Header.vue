@@ -5,7 +5,7 @@
       <!-- Logo -->
       <!-- ============================================================== -->
       <div class="navbar-header">
-        <router-link class="navbar-brand" to="/about">
+        <router-link class="navbar-brand" to="/">
           <!-- Logo icon -->
           <b>
             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->

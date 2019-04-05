@@ -442,39 +442,12 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a class="has-arrow" href="#" aria-expanded="false">
+          <li> 
+            <router-link class="has-arrow" to="/FAQ" aria-expanded="false">
               <i class="mdi mdi-arrange-send-backward"></i>
-              <span class="hide-menu">Multi level dd</span>
-            </a>
-            <ul aria-expanded="false" class="collapse">
-              <li>
-                <a href="#">item 1.1</a>
-              </li>
-              <li>
-                <a href="#">item 1.2</a>
-              </li>
-              <li>
-                <a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
-                <ul aria-expanded="false" class="collapse">
-                  <li>
-                    <a href="#">item 1.3.1</a>
-                  </li>
-                  <li>
-                    <a href="#">item 1.3.2</a>
-                  </li>
-                  <li>
-                    <a href="#">item 1.3.3</a>
-                  </li>
-                  <li>
-                    <a href="#">item 1.3.4</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">item 1.4</a>
-              </li>
-            </ul>
+              <span>FAQ</span>
+            </router-link>
+            
           </li>
         </ul>
       </nav>
