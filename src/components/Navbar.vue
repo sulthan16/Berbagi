@@ -442,12 +442,11 @@
               </li>
             </ul>
           </li>
-          <li> 
+          <li>
             <router-link class="has-arrow" to="/FAQ" aria-expanded="false">
               <i class="mdi mdi-arrange-send-backward"></i>
-              <span>FAQ</span>
+              <span class="hide-menu">FAQ</span>
             </router-link>
-            
           </li>
         </ul>
       </nav>
