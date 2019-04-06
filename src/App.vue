@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <Header/>
-      <navbar/>
-    </div>
-    <div class="page-wrapper">
+    <Header/>
+    <div
+      style="position: relative; width: 100%; height: 71.8125px; display: block; vertical-align: baseline; float: none;"
+    ></div>
+    <navbar/>
+    <div class="page-wrapper" style="min-height: 586px;">
       <div class="container-fluid">
         <router-view/>
       </div>
