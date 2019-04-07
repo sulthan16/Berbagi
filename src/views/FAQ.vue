@@ -3,8 +3,8 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">FAQ</h4>
-          <h6 class="card-subtitle">TENTANG INVESPROPERTI.ID</h6>
+          <h1 class="card-title">FAQ</h1>
+          <h6 >TENTANG INVESPROPERTI.ID</h6>
           <div id="accordion1" role="tablist" aria-multiselectable="true">
             <div class="card m-b-0">
               <div class="card-header" role="tab" id="headingOne1">
@@ -18,7 +18,7 @@
                   >Apa itu InvesProperti.id?</a>
                 </h5>
               </div>
-              <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1">
+              <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1">
                 <div
                   class="card-body"
                 >Invesproperti.id adalah platform crowdfunding di Indonesia untuk investasi di sektor properti berbasis equity. Secara garis besar terdapat 2 jenis investasi di InvesProperti, yaitu investasi di unit properti (rumah, apartemen, ruko dll) dengan kepemilikan bersama dan juga proyek pembangunan properti dengan skema bagi hasil (contohnya pembangunan perumahan cluster).</div>
@@ -68,7 +68,7 @@
               </div>
             </div>
           </div>
-          <h6 class="card-subtitle">TENTANG INVESTASI</h6>
+          <h6>TENTANG INVESTASI</h6>
           <div id="accordion11" role="tablist" aria-multiselectable="true">
             <div class="card m-b-0">
               <div class="card-header" role="tab" id="headingOne11">

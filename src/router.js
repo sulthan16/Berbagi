@@ -9,6 +9,7 @@ const router = new Router({
     mode:'history',
     routes: [
         { path: '/', name: 'home', component: () => import('./views/Home.vue')},
+        { path: '/About', name: 'About', component: () => import('./views/About.vue')},
         { path: '/FAQ', name: 'FAQ', component: () => import('./views/FAQ.vue')}
     ]
 })
