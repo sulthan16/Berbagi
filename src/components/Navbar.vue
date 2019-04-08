@@ -7,27 +7,10 @@
         <ul id="sidebarnav">
           <li class="nav-small-cap">PERSONAL</li>
           <li>
-            <a class="has-arrow" href="#" aria-expanded="false">
+            <router-link class="has-arrow" to="/">
               <i class="mdi mdi-gauge"></i>
               <span class="hide-menu">Dashboard</span>
-            </a>
-            <ul aria-expanded="false" class="collapse">
-              <li>
-                <a href="index.html">Modern Dashboard</a>
-              </li>
-              <li>
-                <a href="index2.html">Awesome Dashboard</a>
-              </li>
-              <li>
-                <a href="index3.html">Classy Dashboard</a>
-              </li>
-              <li>
-                <a href="index4.html">Analytical Dashboard</a>
-              </li>
-              <li>
-                <a href="index5.html">Minimal Dashboard</a>
-              </li>
-            </ul>
+            </router-link>
           </li>
           <li>
             <a class="has-arrow" href="#" aria-expanded="false">
@@ -370,3 +353,13 @@
     <!-- End Sidebar scroll-->
   </aside>
 </template>
+<script>
+export default {
+  props: {
+    state: {
+      required: true,
+      type: Object
+    }
+  }
+};
+</script>

@@ -6,21 +6,17 @@
       <!-- ============================================================== -->
       <div class="navbar-header">
         <router-link class="navbar-brand" to="/">
-          <!-- Logo icon -->
-          <b>
-            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-            <!-- Dark Logo icon -->
-            <img src="@/assets/images/logo-icon.png" alt="homepage" class="dark-logo">
-            <!-- Light Logo icon -->
-            <img src="@/assets/images/logo-light-icon.png" alt="homepage" class="light-logo">
-          </b>
           <!--End Logo icon -->
           <!-- Logo text -->
           <span>
             <!-- dark Logo text -->
-            <img src="@/assets/images/logo-text.png" alt="homepage" class="dark-logo">
-            <!-- Light Logo text -->
-            <img src="@/assets/images/logo-light-text.png" class="light-logo" alt="homepage">
+            <img
+              v-if="!isMobile"
+              src="@/assets/images/logo-text.png"
+              alt="homepage"
+              class="dark-logo"
+            >
+            <img v-else src="@/assets/images/logo-icon.png" alt="homepage" class="dark-logo">
           </span>
         </router-link>
       </div>
@@ -35,10 +31,10 @@
           <!-- This is  -->
           <li class="nav-item">
             <a
+              @click="onClickMenu"
               class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
-              href="javascript:void(0)"
             >
-              <i class="ti-menu"></i>
+              <i :class="state.isExpand ? 'ti-menu': 'ti-close'"></i>
             </a>
           </li>
           <li class="nav-item">
@@ -159,10 +155,22 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Header-menu",
   props: {
-    msg: String
-  }
+    onClickMenu: {
+      required: true,
+      type: Function
+    },
+    state: {
+      required: true,
+      type: Object
+    }
+  },
+  computed: {
+    isMobile() {
+      return this.$store.state.isMobile;
+    }
+  },
 };
 </script>
 
