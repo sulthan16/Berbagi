@@ -10,6 +10,7 @@ const router = new Router({
     routes: [
         { path: '/', name: 'home', component: () => import('./views/Home.vue')},
         { path: '/About', name: 'About', component: () => import('./views/About.vue')},
+        { path: '/Blog', name: 'Blog', component: () => import('./views/Blog.vue')},
         { path: '/FAQ', name: 'FAQ', component: () => import('./views/FAQ.vue')}
     ]
 })

@@ -162,7 +162,7 @@ export default {
       type: Function
     },
     state: {
-      required: true,
+      required: false,
       type: Object
     }
   },
