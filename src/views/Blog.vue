@@ -5,26 +5,21 @@
       <span>{{value.title}}</span>
       <span>{{value.description}}</span>
     </div>
+    <br>
+    <Paginate :page="currentPage" :totalPage="total" @onChangePage="updatePagination"/>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-
+import Paginate from "@/components/paginate/index";
 export default {
   name: "home",
+  components: {
+    Paginate
+  },
   data() {
     return {
-      findAll: {
-        name: "posts",
-        options: [
-          {
-            limit: [0, 10],
-            where: [{ condition: ["draft", "=", false] }],
-            sortBy: ["_id", "desc"]
-          }
-        ]
-      },
       findByCategory: {
         name: "posts",
         options: [
@@ -50,15 +45,49 @@ export default {
           }
         ]
       },
-      blog: []
+      blog: [],
+      previousPage:1,
+      currentPage: 1,
+      total: 1
     };
   },
   async mounted() {
     try {
-      const response = await axios.post("base/sleek/getData", this.findAll);
+      const findAll = {
+        name: "posts",
+        options: [
+          {
+            limit: [0, 5],
+            where: [{ condition: ["draft", "=", false] }],
+            sortBy: ["_id", "desc"]
+          }
+        ]
+      };
+      const response = await axios.post("base/sleek/getData", findAll);
       this.blog = response.data.data[0];
+      this.total = Math.ceil(response.data.data[0].total / 5);
     } catch (e) {
       console.error(e);
+    }
+  },
+  methods: {
+    updatePagination(value) {
+      this.currentPage = value;
+      this.previousPage = value -1;
+      const findAll = {
+        name: "posts",
+        options: [
+          {
+            limit: [this.previousPage * 5, 5],
+            where: [{ condition: ["draft", "=", false] }],
+            sortBy: ["_id", "desc"]
+          }
+        ]
+      };
+      axios.post("base/sleek/getData", findAll).then(res => {
+        this.blog = res.data.data[0];
+        this.total = Math.ceil(res.data.data[0].total / 5);
+      });
     }
   }
 };
