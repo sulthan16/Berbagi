@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <div class="jumbotron">
       <div class="row">
         <div class="col-md-9 col-sm-12 pull-left">
@@ -21,3 +21,14 @@ export default {
   name: "home"
 };
 </script>
+<style scoped>
+.background {
+  background-image: url("../assets/images/background/error-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+</style>
+>
+
+</style>

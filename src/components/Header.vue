@@ -115,7 +115,7 @@
             <img alt="ojk logo" src="@/assets/pse-certified.png" width="50">
           </li>-->
           <li class="nav-item">
-            <button class="btn btn-sm btn-primary m-t-20">Login</button>
+            <router-link to="/auth" class="btn btn-sm btn-primary m-t-20">Login</router-link>
           </li>
           <li class="nav-item dropdown">
             <a

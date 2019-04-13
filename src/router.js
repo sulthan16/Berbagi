@@ -6,13 +6,14 @@ import 'nprogress/nprogress.css'
 Vue.use(Router)
 
 const router = new Router({
-    mode:'history',
+    mode: 'history',
     routes: [
-        { path: '/', name: 'home', component: () => import('./views/Home.vue')},
-        { path: '/About', name: 'About', component: () => import('./views/About.vue')},
-        { path: '/Blog', name: 'Blog', component: () => import('./views/Blog.vue')},
-        { path: '/FAQ', name: 'FAQ', component: () => import('./views/FAQ.vue')},
-        { path: '/daftar-umkm', name: 'list merchan', component: () => import('./views/listMerchan.vue')}
+        { path: '/', name: 'home', component: () => import('./views/Home.vue') },
+        { path: '/About', name: 'About', component: () => import('./views/About.vue') },
+        { path: '/Blog', name: 'Blog', component: () => import('./views/Blog.vue') },
+        { path: '/FAQ', name: 'FAQ', component: () => import('./views/FAQ.vue') },
+        { path: '/daftar-umkm', name: 'list merchan', component: () => import('./views/listMerchan.vue') },
+        { path: '/auth', name: 'auth', component: () => import('./views/auth/index.vue') }
     ]
 })
 
