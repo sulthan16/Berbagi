@@ -53,7 +53,7 @@
         <!-- User profile and search -->
         <!-- ============================================================== -->
         <ul class="navbar-nav my-lg-0">
-          <!-- <li class="nav-item dropdown">
+          <li class="nav-item dropdown" v-if="isLogin">
             <a
               class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
               href
@@ -107,14 +107,14 @@
                 </li>
               </ul>
             </div>
-          </li>-->
+          </li>
           <!-- <li class="nav-item m-t-10">
             <img alt="ojk logo" src="@/assets/LogoOJK.png" width="120">
           </li>
           <li class="nav-item m-t-15 m-r-10">
             <img alt="ojk logo" src="@/assets/pse-certified.png" width="50">
           </li>-->
-          <li class="nav-item">
+          <li class="nav-item" v-else>
             <router-link to="/auth" class="btn btn-sm bg-white text-dark btn-rounded m-t-20">Login</router-link>
           </li>
           <li class="nav-item dropdown">
@@ -158,6 +158,9 @@ export default {
   computed: {
     isMobile() {
       return this.$store.state.isMobile;
+    },
+    isLogin() {
+      return false;
     }
   }
 };

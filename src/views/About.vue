@@ -84,7 +84,7 @@
 
               <div class="comment-text w-100">
                 <h5>Ikhwanhadianto</h5>
-                <p class="m-b-5">S2 Peternakan UGM</p>
+                <p class="m-b-5">Riset dan Pengembangan</p>
                 <div class="comment-footer">
                   <span class="text-muted pull-right">since 2017</span>
                   <span class="action-icons">
@@ -110,7 +110,7 @@
 
               <div class="comment-text w-100">
                 <h5>Ridho Rezaldy</h5>
-                <p class="m-b-5">CEO of Bnctz.com</p>
+                <p class="m-b-5">Sales Manager</p>
                 <div class="comment-footer">
                   <span class="text-muted pull-right">since 2014</span>
                   <span class="action-icons">

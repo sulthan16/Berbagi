@@ -2,11 +2,7 @@
   <div class="login-register">
     <div class="login-box card m-b-20">
       <div class="card-body">
-        <form
-          class="form-horizontal"
-          action="index.html"
-          v-if="isForgotPassword"
-        >
+        <form class="form-horizontal" action="index.html" v-if="isForgotPassword">
           <div class="form-group">
             <div class="col-xs-12">
               <h3>Lupa Password</h3>
@@ -20,7 +16,12 @@
           </div>
           <div class="form-group p-b-10">
             <div class="col-md-12">
-              <a href="javascript:void(0)" id="to-recover" @click="forgotPwd" class="text-dark pull-right">
+              <a
+                href="javascript:void(0)"
+                id="to-recover"
+                @click="forgotPwd"
+                class="text-dark pull-right"
+              >
                 <i class="fa fa-arrow-left m-r-5"></i> Kembali
               </a>
             </div>
@@ -53,7 +54,12 @@
           </div>
           <div class="form-group">
             <div class="col-md-12">
-              <a href="javascript:void(0)" id="to-recover" @click="forgotPwd" class="text-dark pull-right">
+              <a
+                href="javascript:void(0)"
+                id="to-recover"
+                @click="forgotPwd"
+                class="text-dark pull-right"
+              >
                 <i class="fa fa-lock m-r-5"></i> Forgot pwd?
               </a>
             </div>
@@ -70,7 +76,11 @@
             <div class="col-sm-12 text-center">
               <p>
                 Belum Pernah Mendaftar Sebelumnya?
-                <a @click="onSignUp" class="text-info m-l-5">
+                <a
+                  @click="onSignUp"
+                  id="to-recover"
+                  href="javascript:void(0)"
+                >
                   <b>{{isSignIn ? 'Daftar' : 'Login'}}</b>
                 </a>
               </p>
@@ -94,8 +104,8 @@ export default {
       this.isSignIn = !this.isSignIn;
       this.isForgotPassword = false;
     },
-    forgotPwd(){
-        this.isForgotPassword = !this.isForgotPassword;
+    forgotPwd() {
+      this.isForgotPassword = !this.isForgotPassword;
     }
   }
 };
@@ -105,6 +115,7 @@ export default {
 @media only screen and (min-width: 1024px) {
   .login-register {
     padding: 2% !important;
+    position: relative !important;
   }
 }
 </style>
