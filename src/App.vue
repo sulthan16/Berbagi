@@ -9,6 +9,7 @@
     <div class="page-wrapper" style="min-height: 586px;">
       <router-view/>
     </div>
+    <footer class="footer">© 2018 Berbagi.com</footer>
   </div>
 </template>
 <script>
