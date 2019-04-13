@@ -8,7 +8,6 @@ import instance from './instance'
 import 'bootstrap'
 import { $, jquery } from 'jquery'
 import 'popper.js'
-
 Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'http://sulthan-aulia.my.id/api/'

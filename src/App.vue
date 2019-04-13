@@ -71,4 +71,5 @@ export default {
 @import "./assets/bootstrap/css/bootstrap.min.css";
 @import "./assets/css/style.css";
 @import "./assets/css/colors/default.css";
+@import "~placeholder-loading/src/scss/placeholder-loading";
 </style>

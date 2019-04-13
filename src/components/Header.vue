@@ -48,26 +48,12 @@
           <!-- ============================================================== -->
           <!-- Comment -->
           <!-- ============================================================== -->
-          <li class="nav-item m-t-10">
-            <img alt="ojk logo" src="@/assets/LogoOJK.png" width="120">
-          </li>
-          <li class="nav-item m-t-15">
-            <img alt="ojk logo" src="@/assets/pse-certified.png" width="50">
-          </li>
         </ul>
         <!-- ============================================================== -->
         <!-- User profile and search -->
         <!-- ============================================================== -->
         <ul class="navbar-nav my-lg-0">
-          <li class="nav-item hidden-sm-down">
-            <form class="app-search">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <a class="srh-btn">
-                <i class="ti-search"></i>
-              </a>
-            </form>
-          </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
               href
@@ -121,6 +107,15 @@
                 </li>
               </ul>
             </div>
+          </li>-->
+          <li class="nav-item m-t-10">
+            <img alt="ojk logo" src="@/assets/LogoOJK.png" width="120">
+          </li>
+          <li class="nav-item m-t-15 m-r-10">
+            <img alt="ojk logo" src="@/assets/pse-certified.png" width="50">
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-primary m-t-20">Login</button>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -130,20 +125,14 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i class="flag-icon flag-icon-us"></i>
+              <i class="flag-icon flag-icon-id"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right animated bounceInDown">
               <a class="dropdown-item" href="#">
-                <i class="flag-icon flag-icon-in"></i> India
+                <i class="flag-icon flag-icon-id"></i> Indonesia
               </a>
               <a class="dropdown-item" href="#">
-                <i class="flag-icon flag-icon-fr"></i> French
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="flag-icon flag-icon-cn"></i> China
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="flag-icon flag-icon-de"></i> Dutch
+                <i class="flag-icon flag-icon-fr"></i> English
               </a>
             </div>
           </li>
@@ -170,7 +159,7 @@ export default {
     isMobile() {
       return this.$store.state.isMobile;
     }
-  },
+  }
 };
 </script>
 
