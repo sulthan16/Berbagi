@@ -108,12 +108,12 @@
               </ul>
             </div>
           </li>-->
-          <li class="nav-item m-t-10">
+          <!-- <li class="nav-item m-t-10">
             <img alt="ojk logo" src="@/assets/LogoOJK.png" width="120">
           </li>
           <li class="nav-item m-t-15 m-r-10">
             <img alt="ojk logo" src="@/assets/pse-certified.png" width="50">
-          </li>
+          </li>-->
           <li class="nav-item">
             <button class="btn btn-sm btn-primary m-t-20">Login</button>
           </li>
@@ -165,4 +165,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.topbar {
+  background: #0178bc;
+  background: -moz-linear-gradient(left, #318f94 0%, #5ec58c 100%);
+  background: -webkit-linear-gradient(left, #318f94 0%, #5ec58c 100%);
+  background: linear-gradient(to right, #318f94 0%, #5ec58c 100%);
+}
 </style>
