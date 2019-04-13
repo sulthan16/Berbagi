@@ -13,7 +13,7 @@
             </router-link>
           </li>
           <li>
-            <router-link class="has-arrow" to="/Blog" aria-expanded="false">
+            <router-link class="has-arrow" to="/daftar-umkm" aria-expanded="false">
               <i class="mdi mdi-view-list"></i>
               <span class="hide-menu">Daftar UMKM</span>
             </router-link>

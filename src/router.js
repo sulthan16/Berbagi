@@ -11,7 +11,8 @@ const router = new Router({
         { path: '/', name: 'home', component: () => import('./views/Home.vue')},
         { path: '/About', name: 'About', component: () => import('./views/About.vue')},
         { path: '/Blog', name: 'Blog', component: () => import('./views/Blog.vue')},
-        { path: '/FAQ', name: 'FAQ', component: () => import('./views/FAQ.vue')}
+        { path: '/FAQ', name: 'FAQ', component: () => import('./views/FAQ.vue')},
+        { path: '/daftar-umkm', name: 'list merchan', component: () => import('./views/listMerchan.vue')}
     ]
 })
 

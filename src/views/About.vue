@@ -50,18 +50,18 @@
               </div>
             </div>
             <!-- Comment Row -->
-            <div class="d-flex flex-row comment-row active">
+            <div class="d-flex flex-row comment-row">
               <div class="p-2">
                 <span class="round">
                   <img src="../assets/images/users/Husnul.jpg" alt="user" width="50">
                 </span>
               </div>
-              <div class="comment-text active w-100">
+              <div class="comment-text w-100">
                 <h5>Husnul Amri</h5>
                 <p class="m-b-5">Junior Web Developer</p>
                 <div class="comment-footer">
                   <span class="text-muted pull-right">Work since 2019</span>
-                  <span class="action-icons active">
+                  <span class="action-icons">
                     <a href="https://web.facebook.com/amrirevival" target="_blank">
                       <i class="mdi mdi-facebook"></i>
                     </a>
@@ -75,30 +75,53 @@
                 </div>
               </div>
             </div>
-            <!-- Comment Row -->
             <div class="d-flex flex-row comment-row">
               <div class="p-2">
                 <span class="round">
-                  <img src="../assets/images/users/3.jpg" alt="user" width="50">
+                  <img src="../assets/images/users/anto.png" alt="user" width="50">
                 </span>
               </div>
+
               <div class="comment-text w-100">
-                <h5>Johnathan Doeting</h5>
-                <p
-                  class="m-b-5"
-                >Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                <h5>Ikhwanhadianto</h5>
+                <p class="m-b-5">S2 Peternakan UGM</p>
                 <div class="comment-footer">
-                  <span class="text-muted pull-right">April 14, 2016</span>
-                  <span class="label label-light-danger">Rejected</span>
+                  <span class="text-muted pull-right">since 2017</span>
                   <span class="action-icons">
-                    <a href="javascript:void(0)">
-                      <i class="ti-pencil-alt"></i>
+                    <a href="https://www.facebook.com/ikhwan.hadianto.1" target="_blank">
+                      <i class="mdi mdi-facebook"></i>
                     </a>
-                    <a href="javascript:void(0)">
-                      <i class="ti-check"></i>
+                    <a href="https://www.linkedin.com/in/husnul-amri-9a28a4124" target="_blank">
+                      <i class="mdi mdi-linkedin"></i>
                     </a>
-                    <a href="javascript:void(0)">
-                      <i class="ti-heart"></i>
+                    <a href="https://www.instagram.com/_husnulamri/" target="_blank">
+                      <i class="mdi mdi-instagram"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-row comment-row">
+              <div class="p-2">
+                <span class="round">
+                  <img src="../assets/images/users/Husnul.jpg" alt="user" width="50">
+                </span>
+              </div>
+
+              <div class="comment-text w-100">
+                <h5>Ridho Rezaldy</h5>
+                <p class="m-b-5">CEO of Bnctz.com</p>
+                <div class="comment-footer">
+                  <span class="text-muted pull-right">since 2014</span>
+                  <span class="action-icons">
+                    <a href="https://web.facebook.com/amrirevival" target="_blank">
+                      <i class="mdi mdi-facebook"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/husnul-amri-9a28a4124" target="_blank">
+                      <i class="mdi mdi-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_husnulamri/" target="_blank">
+                      <i class="mdi mdi-instagram"></i>
                     </a>
                   </span>
                 </div>
