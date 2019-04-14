@@ -48,53 +48,65 @@
       </div>
     </div>
     <div class="row" v-else>
-      <div class="col-md-4">
-        <div class="card">
-          <img
-            class="card-img-top img-responsive"
-            src="../assets/images/big/img1.jpg"
-            alt="Card image cap"
-          >
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p
-              class="card-text"
-            >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      <template v-if="!state.isDetail">
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              class="card-img-top img-responsive"
+              src="../assets/images/big/img1.jpg"
+              alt="Card image cap"
+            >
+            <div class="card-body">
+              <h4 class="card-title">Bnctz Cake</h4>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Lihat Detail</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img
-            class="card-img-top img-responsive"
-            src="../assets/images/big/img1.jpg"
-            alt="Card image cap"
-          >
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p
-              class="card-text"
-            >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              class="card-img-top img-responsive"
+              src="../assets/images/big/img2.jpg"
+              alt="Card image cap"
+            >
+            <div class="card-body">
+              <h4 class="card-title">Bnctz Coffee</h4>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Lihat Detail</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img
-            class="card-img-top img-responsive"
-            src="../assets/images/big/img1.jpg"
-            alt="Card image cap"
-          >
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p
-              class="card-text"
-            >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              class="card-img-top img-responsive"
+              src="../assets/images/big/img3.jpg"
+              alt="Card image cap"
+            >
+            <div class="card-body">
+              <h4 class="card-title">Nawa.itu</h4>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Lihat Detail</a>
+            </div>
           </div>
         </div>
+      </template>
+      <div class="card mb-4" v-else>
+        <img class="card-img-top" src="../assets/images/big/img1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Card title</h4>
+          <p
+            class="card-text"
+          >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Kembali</a>
       </div>
     </div>
     <div v-if="!state.isLoading" class="pagination justify-content-center mb-4">
@@ -112,7 +124,8 @@ export default {
   data() {
     return {
       state: {
-        isLoading: false
+        isLoading: false,
+        isDetail: false
       },
       currentPage: 1,
       total: 1,
@@ -125,6 +138,9 @@ export default {
     },
     onSelected(name) {
       this.selected = name;
+    },
+    goToDetail(value){
+      this.state.isDetail = !this.state.isDetail;
     }
   }
 };

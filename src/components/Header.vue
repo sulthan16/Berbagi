@@ -101,7 +101,7 @@
                 </li>
                 <li role="separator" class="divider"></li>
                 <li>
-                  <a href="#">
+                  <a href="javascript:void(0)" @click="logout">
                     <i class="fa fa-power-off"></i> Logout
                   </a>
                 </li>
@@ -160,7 +160,12 @@ export default {
       return this.$store.state.isMobile;
     },
     isLogin() {
-      return false;
+      return this.$store.state.auth.isLogged;
+    }
+  },
+  methods:{
+    logout(){
+      this.$store.commit("auth/LOGOUT");
     }
   }
 };

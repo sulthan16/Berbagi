@@ -2,7 +2,7 @@
   <div class="login-register">
     <div class="login-box card m-b-20">
       <div class="card-body">
-        <form class="form-horizontal" action="index.html" v-if="isForgotPassword">
+        <form class="form-horizontal" v-if="isForgotPassword">
           <div class="form-group">
             <div class="col-xs-12">
               <h3>Lupa Password</h3>
@@ -35,21 +35,21 @@
             </div>
           </div>
         </form>
-        <form class="form-horizontal form-material" id="loginform" action="index.html" v-else>
+        <form class="form-horizontal form-material" id="loginform" @submit.prevent="login" v-else>
           <h3 class="box-title m-b-20">{{isSignIn ? 'Masuk': 'Daftar'}}</h3>
           <div class="form-group" v-if="!isSignIn">
             <div class="col-xs-12">
-              <input class="form-control" type="text" required placeholder="Nama Lengkap">
+              <input class="form-control" type="text" v-model="namaLengkap" required placeholder="Nama Lengkap">
             </div>
           </div>
           <div class="form-group">
             <div class="col-xs-12">
-              <input class="form-control" type="text" required placeholder="Username">
+              <input class="form-control" type="text" v-model="username" required placeholder="Username">
             </div>
           </div>
           <div class="form-group p-b-20">
             <div class="col-xs-12">
-              <input class="form-control" type="password" required placeholder="Password">
+              <input class="form-control" type="password" v-model="password" required placeholder="Password">
             </div>
           </div>
           <div class="form-group">
@@ -96,6 +96,9 @@ export default {
   data() {
     return {
       isSignIn: true,
+      username: '',
+      password:'',
+      namaLengkap:'',
       isForgotPassword: false
     };
   },
@@ -106,7 +109,15 @@ export default {
     },
     forgotPwd() {
       this.isForgotPassword = !this.isForgotPassword;
-    }
+    },
+    login() {
+      const credentials = {
+        username: this.username,
+        password: this.password
+      };
+      debugger
+      this.$store.dispatch("auth/login", credentials);
+    },
   }
 };
 </script>

@@ -11,7 +11,7 @@ import 'popper.js'
 Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'http://sulthan-aulia.my.id/api/'
-
+store.dispatch('auth/check');
 new Vue({
   router,
   instance,

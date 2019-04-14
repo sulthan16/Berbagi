@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import auth from './views/auth/store';
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -8,6 +10,9 @@ export default new Vuex.Store({
     isMobile: false,
     search: '',
     notification: [],
+  },
+  modules: {
+    auth
   },
   mutations: {
     mobileLoaded(state) {
