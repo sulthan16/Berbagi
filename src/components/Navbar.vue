@@ -6,32 +6,32 @@
       <nav class="sidebar-nav">
         <ul id="sidebarnav">
           <li class="nav-small-cap">PERSONAL</li>
-          <li>
-            <router-link class="has-arrow" to="/">
+          <li v-on:click="onClickMenu">
+            <router-link to="/">
               <i class="mdi mdi-gauge"></i>
               <span class="hide-menu">Dashboard</span>
             </router-link>
           </li>
-          <li>
-            <router-link class="has-arrow" to="/daftar-umkm" aria-expanded="false">
+          <li v-on:click="onClickMenu">
+            <router-link to="/daftar-umkm" aria-expanded="false">
               <i class="mdi mdi-view-list"></i>
               <span class="hide-menu">Daftar UMKM</span>
             </router-link>
           </li>
-          <li>
-            <router-link class="has-arrow" to="/FAQ" aria-expanded="false">
+          <li v-on:click="onClickMenu">
+            <router-link to="/FAQ" aria-expanded="false">
               <i class="mdi mdi-help-circle"></i>
               <span class="hide-menu">FAQ</span>
             </router-link>
           </li>
-          <li>
-            <router-link class="has-arrow" to="/About" aria-expanded="false">
+          <li v-on:click="onClickMenu">
+            <router-link to="/About" aria-expanded="false">
               <i class="mdi mdi-account-multiple"></i>
               <span class="hide-menu">About</span>
             </router-link>
           </li>
-          <li>
-            <router-link class="has-arrow" to="/Blog" aria-expanded="false">
+          <li v-on:click="onClickMenu">
+            <router-link to="/Blog" aria-expanded="false">
               <i class="mdi mdi-blogger"></i>
               <span class="hide-menu">Blog</span>
             </router-link>
@@ -49,7 +49,11 @@ export default {
     state: {
       required: false,
       type: Object
-    }
+    },
+    onClickMenu: {
+      required: true,
+      type: Function
+    },
   }
 };
 </script>

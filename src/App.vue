@@ -5,7 +5,7 @@
       v-if="!state.isMobile"
       style="position: relative; width: 100%; height: 71.8125px; display: block; vertical-align: baseline; float: none;"
     ></div>
-    <navbar/>
+    <navbar :onClickMenu="exitMenu"/>
     <div class="page-wrapper" style="min-height: 586px;">
       <router-view/>
     </div>
@@ -153,6 +153,10 @@ export default {
         document.body.className =
           "fix-header card-no-border mini-sidebar show-sidebar";
       }
+    },
+    exitMenu(){
+      this.state.isExpand = true;
+      document.body.className = "fix-header mini-sidebar card-no-border";
     }
   }
 };
