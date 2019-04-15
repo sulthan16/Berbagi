@@ -92,7 +92,7 @@
       </div>
       <div class="clear"></div>
     </div>
-    <footer class="footer">© 2018 Berbagi.com</footer>
+    <footer class="footer">© 2019 Berbagi.com</footer>
   </div>
 </template>
 <script>

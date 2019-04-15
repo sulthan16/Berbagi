@@ -49,62 +49,53 @@
     </div>
     <div class="row" v-else>
       <template v-if="!state.isDetail">
-        <div class="col-md-4">
+        <div class="col-md-4" v-for="(value, index) in umkm" :key="index">
           <div class="card">
             <img
               class="card-img-top img-responsive"
-              src="../assets/images/big/img1.jpg"
+              :src="value.featuredImage"
               alt="Card image cap"
             >
             <div class="card-body">
-              <h4 class="card-title">Bnctz Cake</h4>
+              <h4 class="card-title">{{value.title}}</h4>
               <p
                 class="card-text"
-              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Lihat Detail</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img
-              class="card-img-top img-responsive"
-              src="../assets/images/big/img2.jpg"
-              alt="Card image cap"
-            >
-            <div class="card-body">
-              <h4 class="card-title">Bnctz Coffee</h4>
-              <p
-                class="card-text"
-              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Lihat Detail</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img
-              class="card-img-top img-responsive"
-              src="../assets/images/big/img3.jpg"
-              alt="Card image cap"
-            >
-            <div class="card-body">
-              <h4 class="card-title">Nawa.itu</h4>
-              <p
-                class="card-text"
-              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Lihat Detail</a>
+              >{{value.description}}</p><a
+                href="javascript:void(0)"
+                class="btn btn-primary"
+                @click="goToDetail(value)"
+              >Lihat Detail</a>
             </div>
           </div>
         </div>
       </template>
       <div class="card mb-4" v-else>
-        <img class="card-img-top" src="../assets/images/big/img1.jpg" alt="Card image cap">
+        <img class="card-img-top" :src="detail.featuredImage" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p
-            class="card-text"
-          >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title">{{detail.title}}</h4>
+          <gtTabs>
+            <gtTab title="Overview">
+              
+                Investasi pada proyek Properti ini investor bisa berinvestasi ke proyek dari developer dan investor mendapat bagi hasil melalui platform InvesProperti.
+                <br>
+                Nama proyek adalah Serenity Residence di Bandung.
+                <br>
+                Proyeksi omset sekitar 8 Miliar, dan keuntungan sekitar 1.3 Miliar. Investor akan mendapat bagi hasil sebesar 25% dari Net Profit. Jadi dalam 12 bulan, investasi Anda akan berkembang sekitar 26%. Akan dibuka slot pendanaan untuk investor melalui InvesProperti sebesar 200 juta, dengan 1 slot sebesar 10 juta rupiah. Sisa pendanaan akan diisi oleh investor instansi. Investor di InvesProperti.id bisa membeli sebanyak slot yang diiinginkan, dan akan mendapatkan bagi hasil sesuai dengan jumlah slot yang dia beli.
+                <br>
+                Tim developer proyek ini memiliki track record yang bagus, memiliki portofolio 10 proyek di Bandung Raya dengan success rate 100%.
+                <br>
+                Untuk info detil proposal/prospectus nya bisa di download di tab dokumen
+                <br>
+                <b>Kontak InvesProperti</b><br>
+                Jika ada pertanyaan terkait properti dan skema Investasi<br>
+                silahkan hubungi kontak kami<br>
+                Phone/Whatsapp: 085722159221<br>
+                Apabila kesulitas berinvestasi melalui website, bisa juga bertemu kami secara langsung
+             
+            </gtTab>
+            <gtTab title="Lokasi">b</gtTab>
+            <gtTab title="Proyeksi Profit">b</gtTab>
+          </gtTabs>
         </div>
         <a href="javascript:void(0)" class="btn btn-primary" @click="goToDetail()">Kembali</a>
       </div>
@@ -115,11 +106,18 @@
   </div>
 </template>
 <script>
+import axios from "axios";
+import { gtTab, gtTabs } from "@/components/gtTabs";
 import Paginate from "@/components/paginate/index";
 export default {
   name: "home",
   components: {
-    Paginate
+    Paginate,
+    gtTab,
+    gtTabs
+  },
+  mounted() {
+    this.allPost();
   },
   data() {
     return {
@@ -127,20 +125,47 @@ export default {
         isLoading: false,
         isDetail: false
       },
+      umkm: [],
+      detail: {},
       currentPage: 1,
       total: 1,
       selected: "Belum Terpenuhi"
     };
   },
-  methods: {
+  methods: 
+  {
+     async allPost() {
+        try {
+        const findAll = {
+          name: "posts",
+          options: [
+            {
+              limit: [0, 5],
+              where: [{ condition: ["draft", "=", false] }],
+              sortBy: ["_id", "desc"]
+            }
+          ]
+        };
+        const response = await axios.post("base/sleek/getData", findAll);
+        this.umkm = response.data.data[0].rows;
+        this.total = Math.ceil(response.data.data[0].total / 5);
+        this.state = {
+          isLoading: false,
+          isDetail: false
+        };
+      } catch (e) {
+        console.log(e);
+      }
+    },
     updatePagination() {
       console.log("hallo");
     },
     onSelected(name) {
       this.selected = name;
     },
-    goToDetail(value){
+    goToDetail(value) {
       this.state.isDetail = !this.state.isDetail;
+      this.detail = value;
     }
   }
 };

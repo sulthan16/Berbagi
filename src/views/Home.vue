@@ -24,20 +24,14 @@
         <router-link to="/daftar-umkm" class="btn btn-sm btn-primary m-b-20">Daftar UMKM</router-link>
       </div>
     </div>
-    <gtTabs>
-      <gtTab title="Detail Surat">a</gtTab>
-      <gtTab title="Detail Surat">b</gtTab>
-    </gtTabs>
   </div>
 </template>
 
 <script>
-import { gtTab, gtTabs } from "@/components/gtTabs";
 export default {
   name: "home",
   components: {
-    gtTab,
-    gtTabs
+    
   },
   computed: {
     isLogin() {

@@ -9,7 +9,7 @@
           <li v-on:click="onClickMenu">
             <router-link to="/">
               <i class="mdi mdi-gauge"></i>
-              <span class="hide-menu">Dashboard</span>
+              <span class="hide-menu">Home</span>
             </router-link>
           </li>
           <li v-on:click="onClickMenu">
