@@ -26,7 +26,6 @@ export default {
 
     [LOGIN](state, data) {
         state.isLogged = true
-        debugger
         localStorage.setItem("token", data.jwt);
         axios.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`
     },

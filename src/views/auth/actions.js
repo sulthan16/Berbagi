@@ -35,15 +35,12 @@ export const logout = ({ commit }) => {
 }
 export const login = ({ commit, state }, user) => {
     state.isLoading = true;
-    debugger
     axios.post("login/authUser", {
         username: user.username,
         password: user.password
     }).then(response => {
-        debugger
         response = response.data
         if (response.success_message) {
-            debugger
             var data = response;
             commit(types.LOGIN, data);
             router.push({

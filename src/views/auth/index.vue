@@ -39,17 +39,35 @@
           <h3 class="box-title m-b-20">{{isSignIn ? 'Masuk': 'Daftar'}}</h3>
           <div class="form-group" v-if="!isSignIn">
             <div class="col-xs-12">
-              <input class="form-control" type="text" v-model="namaLengkap" required placeholder="Nama Lengkap">
+              <input
+                class="form-control"
+                type="text"
+                v-model="namaLengkap"
+                required
+                placeholder="Nama Lengkap"
+              >
             </div>
           </div>
           <div class="form-group">
             <div class="col-xs-12">
-              <input class="form-control" type="text" v-model="username" required placeholder="Username">
+              <input
+                class="form-control"
+                type="text"
+                v-model="username"
+                required
+                placeholder="Username"
+              >
             </div>
           </div>
           <div class="form-group p-b-20">
             <div class="col-xs-12">
-              <input class="form-control" type="password" v-model="password" required placeholder="Password">
+              <input
+                class="form-control"
+                type="password"
+                v-model="password"
+                required
+                placeholder="Password"
+              >
             </div>
           </div>
           <div class="form-group">
@@ -92,13 +110,14 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       isSignIn: true,
-      username: '',
-      password:'',
-      namaLengkap:'',
+      username: "",
+      password: "",
+      namaLengkap: "",
       isForgotPassword: false
     };
   },
@@ -111,13 +130,28 @@ export default {
       this.isForgotPassword = !this.isForgotPassword;
     },
     login() {
-      const credentials = {
-        username: this.username,
-        password: this.password
-      };
-      debugger
-      this.$store.dispatch("auth/login", credentials);
+      if (!this.isSignIn) {
+        this.daftar();
+      } else {
+        const credentials = {
+          username: this.username,
+          password: this.password
+        };
+        this.$store.dispatch("auth/login", credentials);
+      }
     },
+    async daftar() {
+      try {
+        const credentials = {
+          idRole: "3",
+          password: this.password,
+          userName: this.username
+        };
+        const response = await await axios.post("page/home/daftar", credentials);
+      } catch (e) {
+        console.log(e);
+      }
+    }
   }
 };
 </script>
