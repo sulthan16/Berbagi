@@ -53,14 +53,13 @@
           <div class="card">
             <img
               class="card-img-top img-responsive"
-              :src="value.featuredImage"
+              :src="value.image+'?w=530&h=300'"
               alt="Card image cap"
             >
             <div class="card-body">
-              <h4 class="card-title">{{value.title}}</h4>
-              <p
-                class="card-text"
-              >{{value.description}}</p><a
+              <h4 class="card-title">{{value.nama_umkm}}</h4>
+              <p class="card-text">{{value.deskripsi}}</p>
+              <a
                 href="javascript:void(0)"
                 class="btn btn-primary"
                 @click="goToDetail(value)"
@@ -70,28 +69,22 @@
         </div>
       </template>
       <div class="card mb-4" v-else>
-        <img class="card-img-top" :src="detail.featuredImage" alt="Card image cap">
+        <img class="card-img-top" :src="detail.image+'?w=730&h=300'" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title">{{detail.title}}</h4>
+          <h4 class="card-title">{{detail.nama_umkm}}</h4>
           <gtTabs>
             <gtTab title="Overview">
-              
-                Investasi pada proyek Properti ini investor bisa berinvestasi ke proyek dari developer dan investor mendapat bagi hasil melalui platform InvesProperti.
-                <br>
-                Nama proyek adalah Serenity Residence di Bandung.
-                <br>
-                Proyeksi omset sekitar 8 Miliar, dan keuntungan sekitar 1.3 Miliar. Investor akan mendapat bagi hasil sebesar 25% dari Net Profit. Jadi dalam 12 bulan, investasi Anda akan berkembang sekitar 26%. Akan dibuka slot pendanaan untuk investor melalui InvesProperti sebesar 200 juta, dengan 1 slot sebesar 10 juta rupiah. Sisa pendanaan akan diisi oleh investor instansi. Investor di InvesProperti.id bisa membeli sebanyak slot yang diiinginkan, dan akan mendapatkan bagi hasil sesuai dengan jumlah slot yang dia beli.
-                <br>
-                Tim developer proyek ini memiliki track record yang bagus, memiliki portofolio 10 proyek di Bandung Raya dengan success rate 100%.
-                <br>
-                Untuk info detil proposal/prospectus nya bisa di download di tab dokumen
-                <br>
-                <b>Kontak InvesProperti</b><br>
-                Jika ada pertanyaan terkait properti dan skema Investasi<br>
-                silahkan hubungi kontak kami<br>
-                Phone/Whatsapp: 085722159221<br>
-                Apabila kesulitas berinvestasi melalui website, bisa juga bertemu kami secara langsung
-             
+              Investasi pada proyek Properti ini investor bisa berinvestasi ke proyek dari developer dan investor mendapat bagi hasil melalui platform InvesProperti.
+              <br>Nama proyek adalah Serenity Residence di Bandung.
+              <br>Proyeksi omset sekitar 8 Miliar, dan keuntungan sekitar 1.3 Miliar. Investor akan mendapat bagi hasil sebesar 25% dari Net Profit. Jadi dalam 12 bulan, investasi Anda akan berkembang sekitar 26%. Akan dibuka slot pendanaan untuk investor melalui InvesProperti sebesar 200 juta, dengan 1 slot sebesar 10 juta rupiah. Sisa pendanaan akan diisi oleh investor instansi. Investor di InvesProperti.id bisa membeli sebanyak slot yang diiinginkan, dan akan mendapatkan bagi hasil sesuai dengan jumlah slot yang dia beli.
+              <br>Tim developer proyek ini memiliki track record yang bagus, memiliki portofolio 10 proyek di Bandung Raya dengan success rate 100%.
+              <br>Untuk info detil proposal/prospectus nya bisa di download di tab dokumen
+              <br>
+              <b>Kontak InvesProperti</b>
+              <br>Jika ada pertanyaan terkait properti dan skema Investasi
+              <br>silahkan hubungi kontak kami
+              <br>Phone/Whatsapp: 085722159221
+              <br>Apabila kesulitas berinvestasi melalui website, bisa juga bertemu kami secara langsung
             </gtTab>
             <gtTab title="Lokasi">b</gtTab>
             <gtTab title="Proyeksi Profit">b</gtTab>
@@ -132,10 +125,13 @@ export default {
       selected: "Belum Terpenuhi"
     };
   },
-  methods: 
-  {
-     async allPost() {
-        try {
+  methods: {
+    async allPost() {
+      try {
+        this.state = {
+          isLoading: true,
+          isDetail: false
+        };
         const findAll = {
           name: "posts",
           options: [
@@ -146,9 +142,9 @@ export default {
             }
           ]
         };
-        const response = await axios.post("base/sleek/getData", findAll);
-        this.umkm = response.data.data[0].rows;
-        this.total = Math.ceil(response.data.data[0].total / 5);
+        const response = await axios.post("page/home/showDataUmkm", findAll);
+        this.umkm = response.data.data;
+        this.total = Math.ceil(response.data.data.length / 5);
         this.state = {
           isLoading: false,
           isDetail: false
