@@ -41,7 +41,7 @@
           >
           <div class="card-body">
             <h2 class="card-title">{{value.title}}</h2>
-            <p class="card-text">{{value.description}}</p>
+            <p class="card-text">{{value.description.substring(0, 100)+'...'}}</p>
             <a href="#" class="btn btn-primary" @click="toDetail(value)">Read More →</a>
           </div>
           <div class="card-footer text-muted">Posted on {{formatDate(value.createdAt)}}</div>
